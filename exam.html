@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/exam.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="shortcut icon" href="assets/images/me papers org2.svg" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html"><img src="/assets/images/me papers org2.svg" alt=""></a></div>
+        <a class="togglebtn" href="#"><span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span></a>
+        <div class="navbar-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="exam.html" class="active">Exam Resources</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="ad.html">Advertising</a></li>
+              <li><a href="contact1.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    <div class="main">
+        <h1>Click On Your Required <span>Resource</span></h1>
+  </div>
+      <main class="grid">
+          <article class="fade">
+            <img src="/assets/images/noun_timesheet_1923760.svg" alt="Sample photo" width="100px">
+            <div class="text">
+              <h2>Syllabus</h2>
+              <a href="continue.html">Get your subject Syllabus</a>
+            </div>
+          </article>
+          <article class="fade">
+              <img src="/assets/images/noun_papers_3655061.svg" alt="Sample photo" width="100px">
+              <div class="text">
+                <h2>Pastpapers</h2>
+                <a href="continue.html">Maximum years available</a>
+              </div>
+            </article>
+            <article class="fade">
+              <img src="/assets/images/noun_note_3521312.svg" alt="Sample photo" width="100px">
+              <div class="text">
+                <h2>Notes</h2>
+                <a href="continue.html">Well organised notes</a>
+              </div>
+            </article>
+            <article class="fade">
+              <img src="/assets/images/noun_books_2670592.svg" alt="Sample photo" width="100px">
+              <div class="text">
+                <h2>Books</h2>
+                <a href="continue.html">Recommended books available</a>
+              </div>
+            </article>
+            <article class="fade">
+              <img src="/assets/images/noun_Time calendar_3564715.svg" alt="Sample photo" width="100px">
+              <div class="text">
+                <h2>Timetable</h2>
+                <a href="continue.html">Always up to date</a>
+              </div>
+            </article>
+            <article class="fade">
+              <img src="/assets/images/noun_Globe_407407.svg" alt="Sample photo" width="100px">
+              <div class="text">
+                <h2>Others</h2>
+                <a href="continue.html">Other stuff is there too</a>
+              </div>
+            </article>
+      </main>
+      <footer class="footer-distributed">
+
+        <div class="footer-left">
+      <a href="index.html"><img src="assets/images/me papers org2.svg"></a>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a>
+                |
+                <a href="exam.html">Exam Resources</a>
+                |
+                <a href="about.html">About</a>
+                |
+                <a href="ad.html">Advertising</a>
+                |
+                <a href="contact1.html">Contact</a>
+            </p>
+
+            <p class="footer-company-name">&copy;2021 Me papers Pvt. Ltd.</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                  <p><span>Allama Shabbir Ahmed Usmani Rd, Block 2 Block 6</span>
+                    Gulshan-e-Iqbal, Karachi, Karachi City, Sindh</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+92 3312523858</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:shehzad.mohid123@gmail.com">shehzad.mohid123@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the website</span>
+                Me papers is a free, non-profit online resource.We provide a wide range of services like providing students with the best resources to cater to their needs.</p>
+            <div class="footer-icons">
+              <a href="//www.facebook.com"><i class="fa fa-facebook"></i></a>
+              <a href="//www.twitter.com"><i class="fa fa-twitter"></i></a>
+              <a href="//www.instagram.com"><i class="fa fa-instagram"></i></a>
+              <a href="//www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+              <a href="//www.youtube.com"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+  const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(window).scroll(function(){
+      if($(this).scrollTop() > 100){
+        $(".main").css({"opacity" : "0"})
+      }
+      else {
+        $(".main").css({"opacity" : "1"})
+      }
+    })
+  })
+  </script>
+</html>

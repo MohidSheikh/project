@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/contact1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo"><a href="index.html"><img src="/assets/images/me papers org2.svg" alt=""></a></div>
+                <a class="togglebtn" href="#"><span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span></a>
+                <div class="navbar-links">
+                    <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="exam.html">Exam Resources</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="ad.html">Advertising</a></li>
+                      <li><a href="contact1.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+        <form name="contact-form">
+          <div class="form-control">
+            <label>Full Name</label>
+            <input name="name"
+              placeholder="First and Last Name" />
+            <div class="error hide">Name is required</div>
+          </div>
+    
+          <div class="form-control">
+            <label>Email</label>
+            <input
+              name="email"
+              placeholder="e.g. your_email@example.com"
+            />
+            <div class="error hide">Email is invalid</div>
+          </div>
+    
+          <div class="form-control">
+            <label>Phone</label>
+            <input name="phone"
+            ></input>
+            <div class="error hide">Phone is invalid</div>
+          </div>
+    
+          <div class="form-control">
+            <label>Message</label>
+            <textarea name="message"></textarea>
+            <div class="error hide">Message is required</div>
+          </div>
+    
+          <hr />
+    
+          <button type="submit">SUBMIT FORM</button>
+        </form>
+        <footer class="footer-distributed">
+
+          <div class="footer-left">
+        <a href="index.html"><img src="assets/images/me papers org2.svg"></a>
+  
+              <p class="footer-links">
+                  <a href="index.html">Home</a>
+                  |
+                  <a href="exam.html">Exam Resources</a>
+                  |
+                  <a href="about.html">About</a>
+                  |
+                  <a href="ad.html">Advertising</a>
+                  |
+                  <a href="contact1.html">Contact</a>
+              </p>
+  
+              <p class="footer-company-name">&copy;2021 Me papers Pvt. Ltd.</p>
+          </div>
+  
+          <div class="footer-center">
+              <div>
+                  <i class="fa fa-map-marker"></i>
+                    <p><span>Allama Shabbir Ahmed Usmani Rd, Block 2 Block 6</span>
+                      Gulshan-e-Iqbal, Karachi, Karachi City, Sindh</p>
+              </div>
+  
+              <div>
+                  <i class="fa fa-phone"></i>
+                  <p>+92 3312523858</p>
+              </div>
+              <div>
+                  <i class="fa fa-envelope"></i>
+                  <p><a href="mailto:shehzad.mohid123@gmail.com">shehzad.mohid123@gmail.com</a></p>
+              </div>
+          </div>
+          <div class="footer-right">
+              <p class="footer-company-about">
+                  <span>About the website</span>
+                  Me papers is a free, non-profit online resource.We provide a wide range of services like providing students with the best resources to cater to their needs.</p>
+              <div class="footer-icons">
+                <a href="//www.facebook.com"><i class="fa fa-facebook"></i></a>
+                <a href="//www.twitter.com"><i class="fa fa-twitter"></i></a>
+                <a href="//www.instagram.com"><i class="fa fa-instagram"></i></a>
+                <a href="//www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+                <a href="//www.youtube.com"><i class="fa fa-youtube"></i></a>
+              </div>
+          </div>
+</body>
+<script>
+  const toggleBtn = document.getElementsByClassName('togglebtn')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleBtn.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+</script>
+<script>
+const form = document.querySelector("form[name='contact-form']");
+const nameInput = document.querySelector("input[name='name']");
+const emailInput = document.querySelector("input[name='email']");
+const phoneInput = document.querySelector("input[name='phone']");
+const messageInput = document.querySelector("textarea[name='message']");
+
+nameInput.isValid = () => !!nameInput.value;
+emailInput.isValid = () => isValidEmail(emailInput.value);
+phoneInput.isValid = () => isValidPhone(phoneInput.value);
+messageInput.isValid = () => !!messageInput.value;
+
+const inputFields = [nameInput, emailInput, phoneInput, messageInput];
+
+const isValidEmail = (email) => {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const isValidPhone = (phone) => {
+  const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+  return re.test(String(phone).toLowerCase());
+};
+
+let shouldValidate = false;
+let isFormValid = false;
+
+const validateInputs = () => {
+  console.log("we are here");
+  if (!shouldValidate) return;
+
+  isFormValid = true;
+  inputFields.forEach((input) => {
+    input.classList.remove("invalid");
+    input.nextElementSibling.classList.add("hide");
+
+    if (!input.isValid()) {
+      input.classList.add("invalid");
+      isFormValid = false;
+      input.nextElementSibling.classList.remove("hide");
+    }
+  });
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  shouldValidate = true;
+  validateInputs();
+  if (isFormValid) {
+    // TODO: DO AJAX REQUEST
+  }
+});
+
+inputFields.forEach((input) => input.addEventListener("input", validateInputs));
+</script>
+</html>
